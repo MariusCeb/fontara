@@ -56,10 +56,10 @@ export function Header({ mode, viewport, previewTheme, isMobile, sidebarOpen, on
         )}
         <div style={{ display: 'flex', alignItems: 'center', gap: 7, flexShrink: 0 }}>
           <div style={{ width: 22, height: 22, borderRadius: 5, border: '1px solid rgba(255,255,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(255,255,255,0.04)' }}>
-            <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.75)', letterSpacing: '-0.03em' }}>Tt</span>
+            <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.75)', letterSpacing: '-0.03em' }}>Fa</span>
           </div>
           {!isMobile && (
-            <span style={{ fontSize: 13, fontWeight: 500, color: 'rgba(255,255,255,0.6)', letterSpacing: '-0.01em' }}>TypeTest</span>
+            <span style={{ fontSize: 13, fontWeight: 500, color: 'rgba(255,255,255,0.6)', letterSpacing: '-0.01em' }}>Fontara</span>
           )}
         </div>
       </div>

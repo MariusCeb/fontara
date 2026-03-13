@@ -1,8 +1,8 @@
-# TypeTest
+# Fontara
 
 A live typography testing tool for designers and developers. Pick font pairings, tweak type settings, and preview them across 7 real-world layout templates — all in the browser, instantly.
 
-**[→ Try it live](https://mariusceb.github.io/typetest)**
+**[→ Try it live](https://mariusceb.github.io/fontara)**
 
 ---
 
@@ -80,8 +80,8 @@ Works on desktop, tablet, and mobile. The sidebar becomes a slide-in drawer on s
 ## Run locally
 
 ```bash
-git clone https://github.com/MariusCeb/typetest.git
-cd typetest
+git clone https://github.com/MariusCeb/fontara.git
+cd fontara
 npm install
 npm run dev
 ```

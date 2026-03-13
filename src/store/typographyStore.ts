@@ -3,7 +3,7 @@ import { TypographySettings, LayoutType, ViewportType, AppMode, CustomText, Save
 
 export type PreviewTheme = 'light' | 'dark'
 
-const LS_KEY = 'typetest_saved_pairings'
+const LS_KEY = 'fontara_saved_pairings'
 
 function loadSaved(): SavedPairing[] {
   try { return JSON.parse(localStorage.getItem(LS_KEY) ?? '[]') } catch { return [] }
