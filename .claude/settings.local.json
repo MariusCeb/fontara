@@ -4,7 +4,8 @@
       "Bash(npm run:*)",
       "Bash(gh auth:*)",
       "Bash(git init:*)",
-      "Bash(powershell -Command \"Rename-Item -Path ''C:\\\\Users\\\\ceban\\\\Desktop\\\\PROGETTI\\\\typetest'' -NewName ''fontara''\")"
+      "Bash(powershell -Command \"Rename-Item -Path ''C:\\\\Users\\\\ceban\\\\Desktop\\\\PROGETTI\\\\typetest'' -NewName ''fontara''\")",
+      "Bash(git -C \"C:/Users/ceban/Desktop/PROGETTI/typetest\" remote -v)"
     ]
   }
 }

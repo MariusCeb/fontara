@@ -252,7 +252,7 @@ export function RestaurantLayout({ settings, customText, theme = 'dark', onTextC
                       <p style={{ ...s.h5, color: C.light, marginBottom: 5 }}>{name}</p>
                       <p style={{ ...s.small, color: C.muted, fontStyle: 'italic', lineHeight: 1.6 }}>{desc}</p>
                     </div>
-                    <span style={{ ...s.body, color: C.gold, fontWeight: 500, flexShrink: 0 }}>${price}</span>
+                    <span style={{ ...s.body, color: C.gold, fontWeight: 500, flexShrink: 0 }}>{price === '—' ? '—' : `$${price}`}</span>
                   </div>
                 ))}
               </div>

@@ -17,6 +17,12 @@ export default function App() {
   } = useStore()
 
   // ── Responsive ───────────────────────────────────────────────────────
+  const isMac = typeof navigator !== 'undefined' && /Mac|iPhone|iPad|iPod/.test(
+    (navigator as Navigator & { userAgentData?: { platform?: string } }).userAgentData?.platform ?? navigator.platform ?? ''
+  )
+  const mod   = isMac ? '⌘' : 'Ctrl+'
+  const shift = isMac ? '⇧' : 'Shift+'
+
   const [windowW, setWindowW] = useState(() => window.innerWidth)
   const isMobile = windowW < 768
   const [sidebarOpen, setSidebarOpen] = useState(() => window.innerWidth >= 768)
@@ -199,7 +205,7 @@ export default function App() {
             ['P / C', 'preview · compare'],
             ['D', 'dark / light'],
             ['1 – 7', 'layouts'],
-            ['⌘K', 'font picker'],
+            [`${mod}K`, 'font picker'],
             ['?', 'all shortcuts'],
           ].map(([key, label]) => (
             <div key={key} style={{ display: 'flex', alignItems: 'center', gap: 7 }}>
@@ -231,8 +237,8 @@ export default function App() {
             <p style={{ fontSize: 13, fontWeight: 600, color: 'rgba(255,255,255,0.8)', marginBottom: 20 }}>Keyboard shortcuts</p>
             {[
               ['?', 'Toggle this panel'],
-              ['⌘K', 'Open heading font picker'],
-              ['⌘⇧K', 'Open body font picker'],
+              [`${mod}K`, 'Open heading font picker'],
+              [`${mod}${shift}K`, 'Open body font picker'],
               ['P', 'Switch to preview'],
               ['C', 'Switch to compare'],
               ['D', 'Toggle dark/light preview'],

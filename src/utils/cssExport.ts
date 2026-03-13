@@ -15,7 +15,7 @@ export function generateCSS(settings: TypographySettings): string {
   const sz = getScaledSizes(settings)
 
   return `/* ================================================
-   TypeTest Export
+   Fontara Export
    Generated at ${new Date().toLocaleDateString()}
    ================================================ */
 
