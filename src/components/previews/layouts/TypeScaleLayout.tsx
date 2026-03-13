@@ -25,7 +25,7 @@ const SCALE_SAMPLES: { level: 'h1' | 'h2' | 'h3' | 'h4' | 'h5'; label: string; t
   { level: 'h2', label: 'H2', text: 'Designing with intent' },
   { level: 'h3', label: 'H3', text: 'Typography as voice' },
   { level: 'h4', label: 'H4', text: 'Reading between lines' },
-  { level: 'h5', label: 'H5', text: 'Small but deliberate' },
+  { level: 'h5', label: 'H5', text: 'Why does this font cost $600' },
 ]
 
 const MONO: React.CSSProperties = {

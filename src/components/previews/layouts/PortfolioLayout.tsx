@@ -219,6 +219,7 @@ export function PortfolioLayout({ settings, customText, theme = 'light', onTextC
           { date: 'Feb 2024', title: 'The case for boring design systems', time: '5 min' },
           { date: 'Jan 2024', title: 'How I reduced design handoff friction by 60%', time: '7 min' },
           { date: 'Nov 2023', title: 'Typography is the foundation, not the finish', time: '6 min' },
+          { date: 'Oct 2023', title: 'I used Comic Sans ironically. It has been six months.', time: '3 min' },
         ].map(({ date, title, time }, i) => (
           <div key={title} style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', padding: '20px 0', cursor: 'pointer', borderTop: i === 0 ? `1px solid ${C.rule}` : 'none', borderBottom: `1px solid ${C.rule}` }}>
             <div style={{ display: 'flex', gap: 24, alignItems: 'baseline' }}>

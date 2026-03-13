@@ -184,7 +184,7 @@ export function StartupLayout({ settings, customText, theme = 'light', onTextCha
       <section style={{ padding: '40px', borderBottom: `1px solid ${C.border}` }}>
         <p style={{ ...s.label, color: C.muted, textAlign: 'center', marginBottom: 24 }}>Trusted by teams at</p>
         <div style={{ display: 'flex', gap: 48, justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
-          {['Stripe','Vercel','Linear','Notion','Figma','Loom'].map(n => (
+          {['Stripe','Vercel','Linear','Notion','Figma','Blockbuster'].map(n => (
             <span key={n} style={{ ...s.h5, color: C.muted, fontWeight: 800, letterSpacing: '-0.03em', opacity: 0.6 }}>{n}</span>
           ))}
         </div>
@@ -242,7 +242,7 @@ export function StartupLayout({ settings, customText, theme = 'light', onTextCha
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(260px, 100%), 1fr))', gap: 20, alignItems: 'start' }}>
           {[
-            { tier: 'Hobby', price: '$0',  features: ['3 projects','100 deploys/mo','Shared CDN'], featured: false },
+            { tier: 'Hobby', price: '$0',  features: ['3 projects','100 deploys/mo','Shared CDN','Bragging rights (limited)'], featured: false },
             { tier: 'Pro',   price: '$19', features: ['Unlimited projects','10k deploys/mo','Priority edge','Analytics','Custom domains'], featured: true },
             { tier: 'Team',  price: '$49', features: ['Everything in Pro','10 seats','SSO','Audit logs','SLA'], featured: false },
           ].map(({ tier, price, features, featured }) => (

@@ -280,6 +280,7 @@ export function ArticleLayout({ settings, customText, theme = 'light', onTextCha
             'Optical regularity — even stroke width and consistent proportions ease the reading eye.',
             'Cultural saturation — familiarity breeds legibility, whether that is fair or not.',
             'Quality of the spacing tables — poorly-kerned type feels cheap, regardless of the letterforms.',
+            'It costs $350 on a type foundry website — surely that means something.',
           ].map((item, i) => (
             <li key={i} style={{ ...s.body, color: C.mid, lineHeight: settings.lineHeight, marginBottom: 8 }}>
               {item}

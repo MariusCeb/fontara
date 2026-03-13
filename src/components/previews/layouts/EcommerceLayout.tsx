@@ -252,7 +252,7 @@ export function EcommerceLayout({ settings, customText, theme = 'light', onTextC
 
           {/* Trust badges */}
           <p style={{ ...s.label, color: C.muted, textAlign: 'center', letterSpacing: '0.04em' }}>
-            Free shipping · 30-day returns · Cruelty free
+            Free shipping · 30-day returns · Cruelty free · No, really, it works
           </p>
         </div>
       </section>

@@ -59,6 +59,7 @@ export function RestaurantLayout({ settings, customText, theme = 'dark', onTextC
 
   const menu: Record<string, { name: string; desc: string; price: string }[]> = {
     'To begin': [
+      { name: 'The Bread',           desc: 'Warm sourdough, house-churned butter. Complimentary. Mostly.', price: '—' },
       { name: 'Burrata e Pomodori',  desc: 'Heritage tomatoes, basil oil, aged balsamic, Maldon salt', price: '18' },
       { name: 'Crudo di Tonno',      desc: 'Bluefin tuna, cucumber gelée, sesame, ponzu', price: '26' },
       { name: 'Foie Gras Torchon',   desc: 'Sauternes jelly, warm brioche, micro herbs', price: '34' },

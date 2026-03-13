@@ -69,18 +69,20 @@ export function DashboardLayout({ settings, customText, theme = 'light', onTextC
   ]
 
   const activity = [
-    { initials: 'JL', name: 'Jamie Lee',    sub: 'Completed onboarding flow',   time: '2m ago',   status: 'Done',    statusOk: true },
-    { initials: 'RK', name: 'Ravi Kumar',   sub: 'Upgraded to Pro plan',        time: '14m ago',  status: 'Active',  statusOk: true },
-    { initials: 'MO', name: 'Maya Osei',    sub: 'Submitted a support ticket',  time: '1h ago',   status: 'Open',    statusOk: false },
-    { initials: 'TN', name: 'Tom Nielsen',  sub: 'Exported analytics report',   time: '3h ago',   status: 'Done',    statusOk: true },
-    { initials: 'SP', name: 'Sara Patel',   sub: 'Invited 3 team members',      time: 'Yesterday', status: 'Pending', statusOk: false },
+    { initials: 'JL', name: 'Jamie Lee',    sub: 'Completed onboarding flow',          time: '2m ago',   status: 'Done',    statusOk: true },
+    { initials: 'RK', name: 'Ravi Kumar',   sub: 'Upgraded to Pro plan',               time: '14m ago',  status: 'Active',  statusOk: true },
+    { initials: '??', name: 'Someone',      sub: 'Reset their password (5th time)',    time: '22m ago',  status: 'Again',   statusOk: false },
+    { initials: 'MO', name: 'Maya Osei',    sub: 'Submitted a support ticket',         time: '1h ago',   status: 'Open',    statusOk: false },
+    { initials: 'TN', name: 'Tom Nielsen',  sub: 'Exported analytics report',          time: '3h ago',   status: 'Done',    statusOk: true },
+    { initials: 'SP', name: 'Sara Patel',   sub: 'Invited 3 team members',             time: 'Yesterday', status: 'Pending', statusOk: false },
   ]
 
   const topPages = [
-    { path: '/dashboard',       views: '18,402', bounce: '24%' },
-    { path: '/analytics',       views: '9,841',  bounce: '31%' },
-    { path: '/projects/new',    views: '6,120',  bounce: '18%' },
-    { path: '/settings/billing', views: '4,307', bounce: '41%' },
+    { path: '/dashboard',        views: '18,402', bounce: '24%' },
+    { path: '/analytics',        views: '9,841',  bounce: '31%' },
+    { path: '/projects/new',     views: '6,120',  bounce: '18%' },
+    { path: '/settings/billing', views: '4,307',  bounce: '41%' },
+    { path: '/forgot-password',  views: '8,204',  bounce: '2%'  },
   ]
 
   return (
