@@ -236,18 +236,19 @@ export default function App() {
           <div onClick={e => e.stopPropagation()} style={{ background: '#111114', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 12, padding: '24px 28px', minWidth: 320, maxWidth: 400 }}>
             <p style={{ fontSize: 13, fontWeight: 600, color: 'rgba(255,255,255,0.8)', marginBottom: 20 }}>Keyboard shortcuts</p>
             {[
-              ['?', 'Toggle this panel'],
-              [`${mod}K`, 'Open heading font picker'],
+              ['?',               'Toggle this panel'],
+              [`${mod}K`,         'Open heading font picker'],
               [`${mod}${shift}K`, 'Open body font picker'],
-              ['P', 'Switch to preview'],
-              ['C', 'Switch to compare'],
-              ['D', 'Toggle dark/light preview'],
-              ['1–7', 'Switch layout (Startup, Portfolio, Restaurant, Article, E-comm, Dashboard, Scale)'],
-              ['Esc', 'Close overlays'],
+              ['↑ / ↓',           'Navigate fonts (when picker is open)'],
+              ['P',               'Switch to preview'],
+              ['C',               'Switch to compare'],
+              ['D',               'Toggle dark/light preview'],
+              ['1 – 7',           'Switch layout'],
+              ['Esc',             'Close overlays'],
             ].map(([key, desc]) => (
-              <div key={key} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '6px 0', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.4)' }}>{desc}</span>
-                <kbd style={{ fontSize: 10, color: 'rgba(255,255,255,0.5)', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 4, padding: '2px 7px', fontFamily: 'inherit' }}>{key}</kbd>
+              <div key={key} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12, padding: '7px 0', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.4)', lineHeight: '20px' }}>{desc}</span>
+                <kbd style={{ fontSize: 10, color: 'rgba(255,255,255,0.5)', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 4, padding: '2px 7px', fontFamily: 'inherit', whiteSpace: 'nowrap', flexShrink: 0, marginTop: 2 }}>{key}</kbd>
               </div>
             ))}
             <p style={{ fontSize: 10, color: 'rgba(255,255,255,0.2)', marginTop: 16, textAlign: 'center' }}>Click anywhere to close</p>

@@ -71,6 +71,7 @@ export function FontPicker({ value, onChange, label, suggestionsFor }: Props) {
   const rootRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
   const listRef = useRef<HTMLDivElement>(null)
+  const filteredRef = useRef<typeof FONTS>([])
 
   useFontLoader(PREVIEW_FONTS)
 
@@ -79,6 +80,7 @@ export function FontPicker({ value, onChange, label, suggestionsFor }: Props) {
     const matchQ = f.family.toLowerCase().includes(search.toLowerCase())
     return matchCat && matchQ
   })
+  filteredRef.current = filtered
 
   // Reset focused index when list changes
   useEffect(() => { setFocusedIdx(-1) }, [search, category])
@@ -129,6 +131,25 @@ export function FontPicker({ value, onChange, label, suggestionsFor }: Props) {
   useEffect(() => {
     if (open) setTimeout(() => inputRef.current?.focus(), 50)
   }, [open])
+
+  // Global ↑/↓ navigation when picker is open (works even when search input isn't focused)
+  useEffect(() => {
+    if (!open) return
+    function handleGlobalKey(e: KeyboardEvent) {
+      if (e.target === inputRef.current) return // search input's own handler covers this
+      if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return
+      e.preventDefault()
+      setFocusedIdx(i => {
+        const next = e.key === 'ArrowDown'
+          ? Math.min(i + 1, filteredRef.current.length - 1)
+          : Math.max(i - 1, 0)
+        if (filteredRef.current[next]) onChange(filteredRef.current[next].family)
+        return next
+      })
+    }
+    window.addEventListener('keydown', handleGlobalKey)
+    return () => window.removeEventListener('keydown', handleGlobalKey)
+  }, [open, onChange])
 
   return (
     <div ref={rootRef} style={{ position: 'relative' }}>

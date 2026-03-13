@@ -5,7 +5,20 @@
       "Bash(gh auth:*)",
       "Bash(git init:*)",
       "Bash(powershell -Command \"Rename-Item -Path ''C:\\\\Users\\\\ceban\\\\Desktop\\\\PROGETTI\\\\typetest'' -NewName ''fontara''\")",
-      "Bash(git -C \"C:/Users/ceban/Desktop/PROGETTI/typetest\" remote -v)"
+      "Bash(git -C \"C:/Users/ceban/Desktop/PROGETTI/typetest\" remote -v)",
+      "Bash(gh repo list:*)",
+      "Bash(gh repo view:*)",
+      "Bash(gh repo rename:*)",
+      "Bash(git -C \"C:/Users/ceban/Desktop/PROGETTI/typetest\" remote set-url:*)",
+      "Bash(git -C \"C:/Users/ceban/Desktop/PROGETTI/typetest\" status)",
+      "Bash(git -C \"C:/Users/ceban/Desktop/PROGETTI/typetest\" diff --stat HEAD)",
+      "Bash(git -C \"C:/Users/ceban/Desktop/PROGETTI/typetest\" log --oneline -5)",
+      "Bash(git -C \"C:/Users/ceban/Desktop/PROGETTI/typetest\" push origin master)",
+      "Bash(gh repo clone:*)",
+      "Bash(git -C /tmp/mariusceb-profile pull)",
+      "Bash(git -C \"/tmp/mariusceb-profile\" add README.md)",
+      "Bash(git -C:*)",
+      "Bash(git -C \"/tmp/mariusceb-profile\" push)"
     ]
   }
 }
