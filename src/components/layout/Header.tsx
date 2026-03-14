@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Monitor, Tablet, Smartphone, Code2, Link2, Check, Sun, Moon, Menu, X } from 'lucide-react'
+import React, { useState, useRef, useEffect } from 'react'
+import { Monitor, Tablet, Smartphone, Code2, Link2, Check, Sun, Moon, Menu, X, Puzzle } from 'lucide-react'
 import { AppMode, ViewportType } from '../../types'
 import { PreviewTheme } from '../../store/typographyStore'
 
@@ -30,6 +30,32 @@ const border = 'rgba(255,255,255,0.08)'
 
 export function Header({ mode, viewport, previewTheme, isMobile, sidebarOpen, onSidebarToggle, onModeChange, onViewportChange, onThemeChange, onExport, onShare, onShowShortcuts }: Props) {
   const [shared, setShared] = useState(false)
+  const [showWidget, setShowWidget] = useState(false)
+  const [widgetLoaded, setWidgetLoaded] = useState(false)
+  const widgetRef = useRef<HTMLDivElement>(null)
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    if (!showWidget) return
+    const handler = (e: MouseEvent) => {
+      if (widgetRef.current && !widgetRef.current.contains(e.target as Node)) {
+        setShowWidget(false)
+      }
+    }
+    document.addEventListener('mousedown', handler)
+    return () => document.removeEventListener('mousedown', handler)
+  }, [showWidget])
+
+  function tryWidgetOnPage() {
+    if (widgetLoaded || document.getElementById('fontara-dock')) {
+      setWidgetLoaded(true)
+      return
+    }
+    const script = document.createElement('script')
+    script.src = '/fontara-widget.js'
+    script.onload = () => setWidgetLoaded(true)
+    document.body.appendChild(script)
+  }
 
   function handleShare() {
     onShare()
@@ -127,6 +153,89 @@ export function Header({ mode, viewport, previewTheme, isMobile, sidebarOpen, on
           {shared ? <Check size={11} strokeWidth={2.5} /> : <Link2 size={11} strokeWidth={1.75} />}
           {!isMobile && (shared ? 'Copied' : 'Share')}
         </button>
+
+        {/* Install Widget */}
+        <div ref={widgetRef} style={{ position: 'relative' }}>
+          <button
+            onClick={() => setShowWidget(v => !v)}
+            title="Install Fontara Widget"
+            style={{
+              display: 'flex', alignItems: 'center', gap: 5,
+              padding: '5px 10px', borderRadius: 6,
+              border: `1px solid ${showWidget ? 'rgba(124,58,237,0.5)' : border}`,
+              background: showWidget ? 'rgba(124,58,237,0.12)' : 'transparent',
+              color: showWidget ? '#a78bfa' : dim,
+              fontSize: 12, fontWeight: 500, letterSpacing: '-0.01em', whiteSpace: 'nowrap',
+            }}
+          >
+            <Puzzle size={11} strokeWidth={1.75} />
+            {!isMobile && 'Widget'}
+          </button>
+
+          {showWidget && (
+            <div style={{
+              position: 'absolute', top: 34, right: 0,
+              width: 280, background: '#1a1a1f',
+              border: '1px solid rgba(255,255,255,0.1)',
+              borderRadius: 10, padding: 14,
+              boxShadow: '0 16px 48px rgba(0,0,0,0.5)',
+              zIndex: 200,
+            }}>
+              <p style={{ fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.75)', margin: '0 0 4px' }}>
+                Fontara Widget
+              </p>
+              <p style={{ fontSize: 11, color: 'rgba(255,255,255,0.35)', margin: '0 0 12px', lineHeight: 1.5 }}>
+                Test fonts live on any site. Add this script tag to your page:
+              </p>
+              <div style={{
+                background: '#0d0d0f', border: '1px solid rgba(255,255,255,0.08)',
+                borderRadius: 6, padding: '8px 10px', marginBottom: 10,
+                fontFamily: 'monospace', fontSize: 10, color: '#a78bfa',
+                wordBreak: 'break-all', lineHeight: 1.6,
+                userSelect: 'all',
+              }}>
+                {'<script src="https://yourdomain.com/fontara-widget.js"></script>'}
+              </div>
+              <button
+                onClick={tryWidgetOnPage}
+                style={{
+                  width: '100%', padding: '7px 0', borderRadius: 7,
+                  border: 'none', cursor: 'pointer', fontSize: 12, fontWeight: 600,
+                  background: widgetLoaded ? 'rgba(5,150,105,0.2)' : 'rgba(124,58,237,0.8)',
+                  color: widgetLoaded ? '#34d399' : 'white',
+                  transition: 'all 0.15s',
+                }}
+              >
+                {widgetLoaded ? '✓ Widget active on this page' : 'Try it on this page →'}
+              </button>
+
+              <div style={{ height: 1, background: 'rgba(255,255,255,0.06)', margin: '10px 0' }} />
+
+              <a
+                href="https://chrome.google.com/webstore/detail/fontara-widget"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6,
+                  width: '100%', padding: '7px 0', borderRadius: 7,
+                  border: '1px solid rgba(255,255,255,0.1)',
+                  background: 'transparent', color: 'rgba(255,255,255,0.5)',
+                  fontSize: 12, fontWeight: 500, textDecoration: 'none',
+                  transition: 'all 0.15s', boxSizing: 'border-box',
+                }}
+                onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(255,255,255,0.05)'; (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.8)' }}
+                onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = 'transparent'; (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.5)' }}
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/>
+                  <line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/>
+                  <line x1="10.88" y1="21.94" x2="15.46" y2="14"/>
+                </svg>
+                Add to Chrome
+              </a>
+            </div>
+          )}
+        </div>
 
         {/* Export CSS */}
         <button onClick={onExport} style={{

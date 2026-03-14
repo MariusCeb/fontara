@@ -18,7 +18,18 @@
       "Bash(git -C /tmp/mariusceb-profile pull)",
       "Bash(git -C \"/tmp/mariusceb-profile\" add README.md)",
       "Bash(git -C:*)",
-      "Bash(git -C \"/tmp/mariusceb-profile\" push)"
+      "Bash(git -C \"/tmp/mariusceb-profile\" push)",
+      "Bash(dir:*)",
+      "Bash(powershell -Command \"Get-ChildItem -Path ''C:\\\\Users\\\\ceban\\\\Desktop\\\\PROGETTI\\\\fontara\\\\fontara-widget'' -Recurse | Select-Object FullName\")",
+      "Bash(powershell.exe -Command \"New-Item -ItemType Directory -Force -Path @\\(''C:\\\\Users\\\\ceban\\\\Desktop\\\\PROGETTI\\\\fontara\\\\fontara-widget\\\\src\\\\widget'',''C:\\\\Users\\\\ceban\\\\Desktop\\\\PROGETTI\\\\fontara\\\\fontara-widget\\\\src\\\\extension'',''C:\\\\Users\\\\ceban\\\\Desktop\\\\PROGETTI\\\\fontara\\\\fontara-widget\\\\src\\\\license'',''C:\\\\Users\\\\ceban\\\\Desktop\\\\PROGETTI\\\\fontara\\\\fontara-widget\\\\scripts'',''C:\\\\Users\\\\ceban\\\\Desktop\\\\PROGETTI\\\\fontara\\\\fontara-widget\\\\assets\\\\icons''\\)\")",
+      "Bash(powershell -Command:*)",
+      "Bash(pnpm:*)",
+      "Bash(npm install:*)",
+      "Bash(Remove-Item \"C:\\\\Users\\\\ceban\\\\Desktop\\\\PROGETTI\\\\fontara-pro\\\\apps\\\\web\\\\next.config.ts\")",
+      "Bash(npx serve:*)",
+      "Bash(cmd /c \"dir /s /b C:\\\\Users\\\\ceban\\\\Desktop\\\\PROGETTI\\\\fontara-pro\\\\apps\\\\widget\\\\src\")",
+      "Bash(cmd /c \"dir /s /b \"\"C:\\\\Users\\\\ceban\\\\Desktop\\\\PROGETTI\\\\fontara-pro\\\\apps\\\\widget\\\\src\"\"\")",
+      "Bash(cmd /c \"cd /d \"\"C:\\\\Users\\\\ceban\\\\Desktop\\\\PROGETTI\\\\fontara-pro\\\\apps\\\\widget\"\" && dir /s /b src\")"
     ]
   }
 }
