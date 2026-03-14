@@ -194,7 +194,7 @@ export function Header({ mode, viewport, previewTheme, isMobile, sidebarOpen, on
                 wordBreak: 'break-all', lineHeight: 1.6,
                 userSelect: 'all',
               }}>
-                {'<script src="https://yourdomain.com/fontara-widget.js"></script>'}
+                {'<script src="https://app.fontara.it/widget.js"></script>'}
               </div>
               <button
                 onClick={tryWidgetOnPage}
@@ -236,6 +236,26 @@ export function Header({ mode, viewport, previewTheme, isMobile, sidebarOpen, on
             </div>
           )}
         </div>
+
+        {/* Get PRO */}
+        <a
+          href="https://app.fontara.it/pricing"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: 'flex', alignItems: 'center', gap: 5,
+            padding: '5px 11px', borderRadius: 6,
+            background: 'rgba(124,58,237,0.85)',
+            border: '1px solid rgba(124,58,237,0.6)',
+            color: 'white', fontSize: 12, fontWeight: 600,
+            letterSpacing: '-0.01em', whiteSpace: 'nowrap',
+            textDecoration: 'none', transition: 'background 0.15s',
+          }}
+          onMouseEnter={e => (e.currentTarget.style.background = 'rgba(124,58,237,1)')}
+          onMouseLeave={e => (e.currentTarget.style.background = 'rgba(124,58,237,0.85)')}
+        >
+          {isMobile ? 'PRO' : 'Get PRO Widget →'}
+        </a>
 
         {/* Export CSS */}
         <button onClick={onExport} style={{
