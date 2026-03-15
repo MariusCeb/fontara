@@ -233,6 +233,30 @@ export function Header({ mode, viewport, previewTheme, isMobile, sidebarOpen, on
                 </svg>
                 Add to Chrome
               </a>
+
+              <div style={{ height: 1, background: 'rgba(255,255,255,0.06)', margin: '10px 0' }} />
+
+              <div style={{ textAlign: 'center' }}>
+                <a
+                  // eslint-disable-next-line no-script-url
+                  href="javascript:(function(){if(document.getElementById('fontara-dock'))return;var s=document.createElement('script');s.src='https://app.fontara.it/widget.js';document.body.appendChild(s);})()"
+                  draggable
+                  onClick={e => e.preventDefault()}
+                  style={{
+                    display: 'inline-block',
+                    background: 'rgba(124,58,237,0.8)', color: 'white',
+                    padding: '6px 18px', borderRadius: 7,
+                    fontSize: 12, fontWeight: 600, textDecoration: 'none',
+                    cursor: 'grab', userSelect: 'none',
+                    boxShadow: '0 4px 14px rgba(124,58,237,0.35)',
+                  }}
+                >
+                  Fontara
+                </a>
+                <p style={{ fontSize: 10, color: 'rgba(255,255,255,0.3)', margin: '6px 0 0', lineHeight: 1.4 }}>
+                  Drag to your bookmarks bar to try for free
+                </p>
+              </div>
             </div>
           )}
         </div>
