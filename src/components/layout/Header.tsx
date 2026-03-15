@@ -52,7 +52,7 @@ export function Header({ mode, viewport, previewTheme, isMobile, sidebarOpen, on
       return
     }
     const script = document.createElement('script')
-    script.src = '/fontara-widget.js'
+    script.src = 'https://app.fontara.it/widget.js'
     script.onload = () => setWidgetLoaded(true)
     document.body.appendChild(script)
   }
