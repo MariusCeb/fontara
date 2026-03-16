@@ -88,6 +88,23 @@ export function Header({ mode, viewport, previewTheme, isMobile, sidebarOpen, on
             <span style={{ fontSize: 13, fontWeight: 500, color: 'rgba(255,255,255,0.6)', letterSpacing: '-0.01em' }}>Fontara</span>
           )}
         </div>
+        {!isMobile && (
+          <a
+            href="https://app.fontara.it"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              fontSize: 11, color: 'rgba(255,255,255,0.28)', textDecoration: 'none',
+              border: '1px solid rgba(255,255,255,0.07)', borderRadius: 5,
+              padding: '3px 8px', letterSpacing: '0.01em',
+              transition: 'color 0.12s, border-color 0.12s',
+            }}
+            onMouseEnter={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.6)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.18)' }}
+            onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.28)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.07)' }}
+          >
+            app.fontara.it ↗
+          </a>
+        )}
       </div>
 
       {/* Center: mode toggle — compare hidden on mobile */}
@@ -218,13 +235,13 @@ export function Header({ mode, viewport, previewTheme, isMobile, sidebarOpen, on
               <div style={{ display: 'flex', gap: 6, marginBottom: 8 }}>
                 <div style={{ flex: 1, border: '1px solid rgba(255,255,255,0.1)', borderRadius: 8, padding: '8px 10px' }}>
                   <p style={{ fontSize: 10, fontWeight: 700, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.06em', textTransform: 'uppercase', margin: '0 0 3px' }}>Personal</p>
-                  <p style={{ fontSize: 16, fontWeight: 700, color: 'rgba(255,255,255,0.85)', margin: '0 0 2px' }}>€29</p>
+                  <p style={{ fontSize: 16, fontWeight: 700, color: 'rgba(255,255,255,0.85)', margin: '0 0 2px' }}>€10</p>
                   <p style={{ fontSize: 10, color: 'rgba(255,255,255,0.3)', margin: 0 }}>1 device · lifetime</p>
                 </div>
                 <div style={{ flex: 1, border: '1px solid rgba(124,58,237,0.5)', borderRadius: 8, padding: '8px 10px', background: 'rgba(124,58,237,0.08)' }}>
                   <p style={{ fontSize: 10, fontWeight: 700, color: '#a78bfa', letterSpacing: '0.06em', textTransform: 'uppercase', margin: '0 0 3px' }}>Commercial</p>
-                  <p style={{ fontSize: 16, fontWeight: 700, color: 'rgba(255,255,255,0.85)', margin: '0 0 2px' }}>€89</p>
-                  <p style={{ fontSize: 10, color: 'rgba(255,255,255,0.3)', margin: 0 }}>∞ devices · lifetime</p>
+                  <p style={{ fontSize: 16, fontWeight: 700, color: 'rgba(255,255,255,0.85)', margin: '0 0 2px' }}>€29</p>
+                  <p style={{ fontSize: 10, color: 'rgba(255,255,255,0.3)', margin: 0 }}>4 devices · lifetime</p>
                 </div>
               </div>
               <a
