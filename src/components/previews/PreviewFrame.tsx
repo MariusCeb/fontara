@@ -60,7 +60,8 @@ export function PreviewFrame({ settings, layout, viewport, previewTheme = 'light
 
   const targetW = VIEWPORT_W[viewport]
   const scale   = targetW ? Math.min(1, cw / targetW) : 1
-  const innerW  = targetW ?? cw
+  // Desktop uses 100% width to avoid Safari resize-animation flash on first render
+  const innerW: number | string = targetW ?? '100%'
 
   const Layout = LAYOUTS[layout]
 

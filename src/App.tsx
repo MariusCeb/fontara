@@ -136,6 +136,7 @@ export default function App() {
 
         <main style={{ flex: 1, overflow: 'hidden', display: 'flex', background: '#101012', minWidth: 0, position: 'relative' }}>
           {mode === 'preview' ? (
+            <div style={{ width: !isMobile && viewport === 'desktop' ? '80%' : '100%', display: 'flex', flexDirection: 'column', height: '100%' }}>
             <PreviewFrame
               settings={settings[0]}
               layout={activeLayout}
@@ -144,6 +145,7 @@ export default function App() {
               customText={customText}
               onTextChange={t => setCustomText(t)}
             />
+            </div>
           ) : (
             <div style={{ display: 'flex', flex: 1, overflow: 'hidden', minWidth: 0 }}>
               {([0, 1] as const).map(idx => {
