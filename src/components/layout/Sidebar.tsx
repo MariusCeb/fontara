@@ -187,7 +187,7 @@ export function Sidebar({
 
       <div style={{ padding: '12px 16px', borderTop: `1px solid ${T.border}`, flexShrink: 0, display: 'flex', flexDirection: 'column', gap: 5, alignItems: 'center' }}>
         <p style={{ fontSize: 10, color: T.text3, letterSpacing: '0.02em' }}>
-          175+ fonts via Google Fonts
+          310+ fonts via Google Fonts
         </p>
         <p style={{ fontSize: 10, color: T.text3, letterSpacing: '0.02em' }}>
           made by{' '}
