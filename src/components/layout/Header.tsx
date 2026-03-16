@@ -211,27 +211,37 @@ export function Header({ mode, viewport, previewTheme, isMobile, sidebarOpen, on
 
               <div style={{ height: 1, background: 'rgba(255,255,255,0.06)', margin: '10px 0' }} />
 
+              {/* Pricing */}
+              <p style={{ fontSize: 11, fontWeight: 600, color: 'rgba(255,255,255,0.5)', marginBottom: 8 }}>
+                Unlock PRO features
+              </p>
+              <div style={{ display: 'flex', gap: 6, marginBottom: 8 }}>
+                <div style={{ flex: 1, border: '1px solid rgba(255,255,255,0.1)', borderRadius: 8, padding: '8px 10px' }}>
+                  <p style={{ fontSize: 10, fontWeight: 700, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.06em', textTransform: 'uppercase', margin: '0 0 3px' }}>Personal</p>
+                  <p style={{ fontSize: 16, fontWeight: 700, color: 'rgba(255,255,255,0.85)', margin: '0 0 2px' }}>€29</p>
+                  <p style={{ fontSize: 10, color: 'rgba(255,255,255,0.3)', margin: 0 }}>1 device · lifetime</p>
+                </div>
+                <div style={{ flex: 1, border: '1px solid rgba(124,58,237,0.5)', borderRadius: 8, padding: '8px 10px', background: 'rgba(124,58,237,0.08)' }}>
+                  <p style={{ fontSize: 10, fontWeight: 700, color: '#a78bfa', letterSpacing: '0.06em', textTransform: 'uppercase', margin: '0 0 3px' }}>Commercial</p>
+                  <p style={{ fontSize: 16, fontWeight: 700, color: 'rgba(255,255,255,0.85)', margin: '0 0 2px' }}>€89</p>
+                  <p style={{ fontSize: 10, color: 'rgba(255,255,255,0.3)', margin: 0 }}>∞ devices · lifetime</p>
+                </div>
+              </div>
               <a
-                href="https://chrome.google.com/webstore/detail/fontara-widget"
+                href="https://app.fontara.it/pricing"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                  display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6,
-                  width: '100%', padding: '7px 0', borderRadius: 7,
-                  border: '1px solid rgba(255,255,255,0.1)',
-                  background: 'transparent', color: 'rgba(255,255,255,0.5)',
-                  fontSize: 12, fontWeight: 500, textDecoration: 'none',
-                  transition: 'all 0.15s', boxSizing: 'border-box',
+                  display: 'block', textAlign: 'center',
+                  padding: '7px 0', borderRadius: 7, marginBottom: 10,
+                  background: 'rgba(124,58,237,0.8)', color: 'white',
+                  fontSize: 12, fontWeight: 600, textDecoration: 'none',
+                  transition: 'background 0.15s',
                 }}
-                onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(255,255,255,0.05)'; (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.8)' }}
-                onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = 'transparent'; (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.5)' }}
+                onMouseEnter={e => (e.currentTarget.style.background = 'rgba(124,58,237,1)')}
+                onMouseLeave={e => (e.currentTarget.style.background = 'rgba(124,58,237,0.8)')}
               >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/>
-                  <line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/>
-                  <line x1="10.88" y1="21.94" x2="15.46" y2="14"/>
-                </svg>
-                Add to Chrome
+                Get PRO →
               </a>
 
               <div style={{ height: 1, background: 'rgba(255,255,255,0.06)', margin: '10px 0' }} />
